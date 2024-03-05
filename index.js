@@ -33,11 +33,12 @@ async function getLyrics(title) {
     const startIndex = htmlText.lastIndexOf("<div", indexOfComment);
     const endIndex = htmlText.indexOf("</div>", indexOfComment) + 6;
     const lyrics = htmlText
-      .substring(startIndex, endIndex)
-      .replace(/<!--[^>]*-->/g, "")
-      .replace(/<br>/g, "")
-      .replace(/<\/?div[^>]*>/g, "")
-      .trim();
+    .substring(startIndex, endIndex)
+    .replace(/<!--[^>]*-->/g, "")
+    .replace(/<br>/g, "")
+    .replace(/<\/?div[^>]*>/g, "")
+    .replace(/<\/?i[^>]*>/g, "")
+    .trim();
 
     return {
       title: search.songs[0].autocomplete,
