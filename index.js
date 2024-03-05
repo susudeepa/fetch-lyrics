@@ -45,7 +45,7 @@ async function getLyrics(title) {
       lyrics: lyrics,
     };
   } catch (error) {
-    throw new Error(`Failed to get lyrics for "${title}": ${error.message}`);
+    throw new Error(`Failed to get lyrics for "${title}": ${error}`);
   }
 }
 
