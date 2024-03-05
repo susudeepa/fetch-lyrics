@@ -1,12 +1,10 @@
-import fetch from "node-fetch";
-
 /**
  * Fetches the lyrics for a given song title from azlyrics.com.
  * @param {string} title - The title of the song to fetch lyrics for.
  * @returns {Promise<object>} A promise that resolves to an object containing the title and lyrics of the song.
  * @throws {Error} If fetching lyrics fails or no lyrics are found for the given title.
  */
-export async function getLyrics(title) {
+async function getLyrics(title) {
   try {
     const res = await fetch(
       `https://search.azlyrics.com/suggest.php?q=${encodeURIComponent(title)}`
@@ -49,3 +47,5 @@ export async function getLyrics(title) {
     throw new Error(`Failed to get lyrics for "${title}": ${error.message}`);
   }
 }
+
+module.exports = { getLyrics };
