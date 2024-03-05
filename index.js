@@ -21,11 +21,12 @@ async function getLyrics(title) {
     }
 
     const r = await fetch(search.songs[0].url);
-
+   
     if (!r.ok) {
       throw new Error(`Failed to fetch lyrics. Status: ${r.status}`);
     }
 
+console.log(r, r.text)
     const htmlText = await r.text();
     const indexOfComment = htmlText.indexOf(
       "Usage of azlyrics.com content by any third-party lyrics provider is prohibited by our licensing agreement. Sorry about that."
