@@ -1,8 +1,9 @@
 {
   "name": "fetch-lyrics",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A simple package to fetch song lyrics from azlyrics.com (it works)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
   },
